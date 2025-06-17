@@ -1,103 +1,865 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Varada Vinayak  Mandir</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fff9f0;
-    }
-    .hero {
-      background: url('https://Varada Vinayak .org/assets/img/hero.jpg') no-repeat center center;
-      background-size: cover;
-      height: 80vh;
-      position: relative;
-      color: white;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      background-color: rgba(0,0,0,0.5);
-      padding: 1rem;
-    }
-    footer {
-      background-color: #d4af37;
-      color: white;
-      padding: 1rem 0;
-      text-align: center;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varada Vinayak Ganesh Mandir - RTO Circle, Belgaum</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <style>
+        .font-tangerine {
+            font-family: 'Tangerine', cursive;
+        }
+        .bg-ganesha-pattern {
+            background-image: url('varada.jpg');
+            background-size: contain;
+            
+        }
+        .ganesha-border {
+            border-image: url('https://i.pinimg.com/originals/2b/2a/6c/2b2a6c4e4c3f8c9a3c3e8e3b3e3e3e3.jpg') 30 round;
+        }
+        .nav-item:hover {
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+        }
+        .puja-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(237, 137, 54, 0.3);
+            transition: all 0.3s ease;
+        }
+        .live-darshan-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        .live-darshan-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-amber-50 bg-ganesha-pattern bg-opacity-10">
+    <!-- Header with Navigation -->
+    <header class="bg-gradient-to-r from-amber-700 to-amber-900 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <img src="swastika.jpg" alt="Ganesh Logo" class="h-12 w-12 rounded-full object-cover border-2 border-amber-300">
+                    <div>
+                        <h1 class="font-tangerine text-3xl md:text-4xl text-white">Varada Vinayak</h1>
+                        <p class="text-xs text-amber-200">Ganesh Mandir, Belgaum</p>
+                    </div>
+                </div>
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-6">
+                        <li class="nav-item"><a href="#home" class="text-white hover:text-amber-200 font-medium">Home</a></li>
+                        <li class="nav-item"><a href="#about" class="text-white hover:text-amber-200 font-medium">About</a></li>
+                        <li class="nav-item"><a href="#services" class="text-white hover:text-amber-200 font-medium">Services</a></li>
+                        <li class="nav-item"><a href="#events" class="text-white hover:text-amber-200 font-medium">Events</a></li>
+                        <li class="nav-item"><a href="#contact" class="text-white hover:text-amber-200 font-medium">Contact</a></li>
+                        <li class="nav-item">
+                            <a href="#live-darshan" class="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-full font-bold flex items-center">
+                                <i class="fas fa-video mr-2"></i> Live Darshan
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="md:hidden text-white text-2xl" id="mobile-menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-amber-800" id="mobile-menu">
+            <ul class="px-4 py-2 space-y-2">
+                <li><a href="#home" class="block text-white hover:text-amber-200 py-2">Home</a></li>
+                <li><a href="#about" class="block text-white hover:text-amber-200 py-2">About</a></li>
+                <li><a href="#services" class="block text-white hover:text-amber-200 py-2">Services</a></li>
+                <li><a href="#events" class="block text-white hover:text-amber-200 py-2">Events</a></li>
+                <li><a href="#contact" class="block text-white hover:text-amber-200 py-2">Contact</a></li>
+                <li>
+                    <a href="#live-darshan" class="block bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-full font-bold my-2 text-center">
+                        <i class="fas fa-video mr-2"></i> Live Darshan
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
-    <div class="container">
-      <a class="navbar-brand" href="#">Varada Vinayak </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#sevas">Sevas</a></li>
-          <li class="nav-item"><a class="nav-link" href="#donate">Donation</a></li>
-          <li class="nav-item"><a class="nav-link" href="#live">Live Darshan</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    <!-- Hero Section -->
+    <section id="home" class="relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="bg-[url('https://i.pinimg.com/originals/2b/2a/6c/2b2a6c4e4c3f8c9a3c3e8e3b3e3e3e3.jpg')] bg-cover bg-center h-96 md:h-screen max-h-screen"></div>
+        <div class="container mx-auto px-4 relative z-10 flex items-center justify-center h-96 md:h-screen max-h-screen">
+            <div class="text-center text-white bg-black bg-opacity-50 p-8 rounded-lg backdrop-blur-sm">
+                <h1 class="font-tangerine text-5xl md:text-8xl mb-4 text-amber-300">Varada Vinayak Ganesh Mandir</h1>
+                <p class="text-xl md:text-2xl mb-6">RTO Circle, Belgaum, Karnataka</p>
+                <p class="text-lg mb-8">"Where devotion meets divinity in the presence of Lord Ganesha"</p>
+                <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+                    <a href="#live-darshan" class="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-full font-bold text-lg flex items-center justify-center">
+                        <i class="fas fa-video mr-2"></i> Live Darshan
+                    </a>
+                    <a href="#about" class="bg-white hover:bg-gray-100 text-amber-800 px-8 py-3 rounded-full font-bold text-lg">Explore Temple</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Welcome to Shree Varada Vinayak  Temple</h1>
-  </section>
+    <!-- Welcome Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-tangerine text-4xl md:text-6xl text-amber-700 mb-4">Welcome to Our Temple</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto"></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="https://i.pinimg.com/originals/2b/2a/6c/2b2a6c4e4c3f8c9a3c3e8e3b3e3e3e3.jpg" alt="Temple Entrance" class="w-full h-auto rounded-lg shadow-xl border-4 border-amber-200">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl md:text-3xl font-bold text-amber-800 mb-4">Experience Divine Blessings</h3>
+                    <p class="text-gray-700 mb-4">Varada Vinayak Ganesh Mandir, located at the heart of Belgaum at RTO Circle, is a sacred abode of Lord Ganesha where devotees find peace, prosperity, and spiritual fulfillment.</p>
+                    <p class="text-gray-700 mb-6">Our temple is renowned for its serene atmosphere and the powerful presence of Lord Ganesha, the remover of obstacles. Established over 50 years ago, the temple has been serving the spiritual needs of thousands of devotees.</p>
+                    <div class="bg-amber-100 p-4 rounded-lg border-l-4 border-amber-500">
+                        <h4 class="font-bold text-amber-800 mb-2">Temple Timings:</h4>
+                        <p class="text-gray-700">Morning: 6:00 AM to 12:30 PM</p>
+                        <p class="text-gray-700">Evening: 4:30 PM to 9:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- About Section -->
-  <section id="about" class="container py-5">
-    <h2>About the Temple</h2>
-    <p>
-      Shree Varada Vinayak Ganapati Mandir is one of the most revered temples in Belgaum, Karnataka.
-    </p>
-  </section>
+    <!-- Upcoming Events -->
+    <section class="py-16 bg-amber-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-tangerine text-4xl md:text-6xl text-amber-700 mb-4">Upcoming Events</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Event 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="relative">
+                        <img src="https://i.pinimg.com/originals/2b/2a/6c/2b2a6c4e4c3f8c9a3c3e8e3b3e3e3e3.jpg" alt="Ganesh Chaturthi" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4 bg-amber-600 text-white px-3 py-1 rounded-full text-sm font-bold">Upcoming</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-amber-800 mb-2">Ganesh Chaturthi</h3>
+                        <p class="text-gray-600 mb-4"><i class="far fa-calendar-alt mr-2 text-amber-600"></i> </p>
+                        <p class="text-gray-700 mb-4">Join us for the grand celebration of Lord Ganesha's birthday with special pujas, cultural programs, and processions.</p>
+                        <a href="#" class="text-amber-600 hover:text-amber-800 font-medium">Learn More →</a>
+                    </div>
+                </div>
+                <!-- Event 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="relative">
+                        <img src="https://i.pinimg.com/originals/2b/2a/6c/2b2a6c4e4c3f8c9a3c3e8e3b3e3e3e3.jpg" alt="Sankashti Chaturthi" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4 bg-amber-600 text-white px-3 py-1 rounded-full text-sm font-bold">Upcoming</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-amber-800 mb-2">Sankashti Chaturthi</h3>
+                        <p class="text-gray-600 mb-4"><i class="far fa-calendar-alt mr-2 text-amber-600"></i> </p>
+                        <p class="text-gray-700 mb-4">Special evening puja and moon sighting ceremony with Vedic chanting and distribution of prasadam.</p>
+                        <a href="#" class="text-amber-600 hover:text-amber-800 font-medium">Learn More →</a>
+                    </div>
+                </div>
+                <!-- Event 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="relative">
+                        <img src="https://i.pinimg.com/originals/2b/2a/6c/2b2a6c4e4c3f8c9a3c3e8e3b3e3e3e3.jpg" alt="Weekly Bhajans" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4 bg-amber-600 text-white px-3 py-1 rounded-full text-sm font-bold">Weekly</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-amber-800 mb-2">Weekly Bhajan Sandhya</h3>
+                        <p class="text-gray-600 mb-4"><i class="far fa-calendar-alt mr-2 text-amber-600"></i> Every Tuesday, 7:30 PM</p>
+                        <p class="text-gray-700 mb-4">Devotional singing and chanting session open to all devotees. Experience divine bliss through music.</p>
+                        <a href="#" class="text-amber-600 hover:text-amber-800 font-medium">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#events" class="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-full font-bold text-lg inline-block">View All Events</a>
+            </div>
+        </div>
+    </section>
 
-  <!-- Live Darshan Section -->
-  <section id="live" class="container py-5">
-    <h2>Live Darshan</h2>
-    <div class="">
-        <img src="varada.jpg" />
-	<!--
-      <iframe src="https://www.youtube.com/embed/live_stream?channel=UCExample" title="Live Darshan" allowfullscreen></iframe>
-    -->
-	</div>
-  </section>
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-tangerine text-4xl md:text-6xl text-amber-700 mb-4">About Our Temple</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto"></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center mb-12">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h3 class="text-2xl md:text-3xl font-bold text-amber-800 mb-4">History & Significance</h3>
+                    <p class="text-gray-700 mb-4">Varada Vinayak Ganesh Mandir was established in 1970 [&reestablished in 2025] by a group of devoted followers of Lord Ganesha. The temple's main deity is a beautiful 3-foot tall idol of Lord Ganesha in the Varada Vinayak form, blessing devotees with his right hand.</p>
+                    <p class="text-gray-700 mb-4">The temple gained prominence when several devotees reported their wishes being fulfilled after sincere prayers. Since then, the temple has become a spiritual hub in Belgaum.</p>
+                    <p class="text-gray-700 mb-6">The idol is believed to be self-manifested (Swayambhu)</p>
+                    <div class="bg-amber-100 p-4 rounded-lg">
+                        <h4 class="font-bold text-amber-800 mb-2">Special Features:</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <!-- <li>108 names of Ganesha carved on temple pillars</li> -->
+                            <li>Sacred Peepal tree in the courtyard</li>
+                            <!-- <li>Ancient bell gifted by royal family</li>
+                            <li>Special meditation hall for devotees</li> -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://i.pinimg.com/originals/2b/2a/6c/2b2a6c4e4c3f8c9a3c3e8e3b3e3e3e3.jpg" alt="Temple History" class="w-full h-auto rounded-lg shadow-xl border-4 border-amber-200">
+                </div>
+            </div>
+            <div class="mb-12">
+                <h3 class="text-2xl md:text-3xl font-bold text-amber-800 mb-6 text-center">Daily Rituals & Spiritual Practices</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-amber-50 p-6 rounded-lg border border-amber-200">
+                        <div class="text-amber-600 text-3xl mb-4">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-amber-800 mb-2">Morning Rituals</h4>
+                        <p class="text-gray-700">5:30 AM - Temple opening with mangala aarti</p> <!--
+                        <p class="text-gray-700">6:00 AM - Abhishekam with milk, honey and flowers</p>
+                        <p class="text-gray-700">8:00 AM - Maha Naivedyam (breakfast offering)</p> -->
+                    </div>
+                    <div class="bg-amber-50 p-6 rounded-lg border border-amber-200">
+                        <div class="text-amber-600 text-3xl mb-4">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-amber-800 mb-2">Afternoon Rituals</h4>
+                        <!-- <p class="text-gray-700">12:00 PM - Rajabhog Aarti with full meal offering</p>
+                        <p class="text-gray-700">12:30 PM - Temple closes for afternoon rest</p>
+                        <p class="text-gray-700">4:00 PM - Temple reopens with ghanta nadam</p> -->
+                    </div>
+                    <div class="bg-amber-50 p-6 rounded-lg border border-amber-200">
+                        <div class="text-amber-600 text-3xl mb-4">
+                            <i class="fas fa-moon"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-amber-800 mb-2">Evening Rituals</h4>
+                        <p class="text-gray-700">6:30 PM - Deeparadhana with lamps</p> <!--
+                        <p class="text-gray-700">7:30 PM - Bhajans and chanting sessions</p>
+                        <p class="text-gray-700">8:45 PM - Shayan Aarti before closing</p> -->
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-2xl md:text-3xl font-bold text-amber-800 mb-6 text-center">Temple Gallery [wip]</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <img src="https://i.pinimg.com/originals/2b/2a/6c/2b2a6c4e4c3f8c9a3c3e8e3b3e3e3e3.jpg" alt="Temple Gallery 1" class="w-full h-48 object-cover rounded-lg hover:scale-105 transition-transform cursor-pointer">
+                    <img src="https://i.pinimg.com/originals/2b/2a/6c/2b2a6c4e4c3f8c9a3c3e8e3b3e3e3e3.jpg" alt="Temple Gallery 2" class="w-full h-48 object-cover rounded-lg hover:scale-105 transition-transform cursor-pointer">
+                    <img src="https://i.pinimg.com/originals/2b/2a/6c/2b2a6c4e4c3f8c9a3c3e8e3b3e3e3e3.jpg" alt="Temple Gallery 3" class="w-full h-48 object-cover rounded-lg hover:scale-105 transition-transform cursor-pointer">
+                    <img src="https://i.pinimg.com/originals/2b/2a/6c/2b2a6c4e4c3f8c9a3c3e8e3b3e3e3e3.jpg" alt="Temple Gallery 4" class="w-full h-48 object-cover rounded-lg hover:scale-105 transition-transform cursor-pointer">
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Donation Section 
-  <section id="donate" class="container py-5">
-    <h2>Donate to the Temple</h2>
-    <p>Your donations help support temple maintenance and social services.</p>
-    <a href="#" class="btn btn-warning">Donate Now</a>
-  </section>
- -->
-  <!-- Contact Section -->
-  <section id="contact" class="container py-5">
-    <h2>Contact Us</h2>
-    <p>Email: mnjagadeesh@gmail.com</p>
-  </section>
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-amber-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-tangerine text-4xl md:text-6xl text-amber-700 mb-4">Temple Services</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto"></div>
+                <p class="text-xl text-gray-700 mt-4">We offer various spiritual services to help devotees connect with the divine</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="puja-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="p-6">
+                        <div class="text-amber-600 text-4xl mb-4">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-amber-800 mb-3">Abhisheka</h3>
+                        <p class="text-gray-700 mb-4">Sacred bathing ceremony of the deity with milk, honey, yogurt, ghee and other auspicious items.</p>
+                        <div class="bg-amber-100 p-3 rounded-lg mb-4">
+                            <p class="text-sm text-amber-800 font-medium"><i class="far fa-clock mr-2"></i> Daily at 6:00 AM & 6:00 PM</p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-700 font-bold"></span>
+                            <a href="#" class="text-amber-600 hover:text-amber-800 font-medium"></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="puja-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="p-6">
+                        <div class="text-amber-600 text-4xl mb-4">
+                            <i class="fas fa-praying-hands"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-amber-800 mb-3">Ganapati Homa</h3>
+                        <p class="text-gray-700 mb-4">Sacred fire ritual performed by priests to invoke Lord Ganesha's blessings for success and prosperity.</p>
+                        <div class="bg-amber-100 p-3 rounded-lg mb-4">
+                            <p class="text-sm text-amber-800 font-medium"><i class="far fa-clock mr-2"></i> Every Thursday, 8:00 AM</p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-700 font-bold"></span>
+                            <a href="#" class="text-amber-600 hover:text-amber-800 font-medium"></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="puja-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="p-6">
+                        <div class="text-amber-600 text-4xl mb-4">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-amber-800 mb-3">Sankashti Chaturthi Puja</h3>
+                        <p class="text-gray-700 mb-4">Special monthly worship on Chaturthi day with Vedic chanting and moon sighting ceremony.</p>
+                        <div class="bg-amber-100 p-3 rounded-lg mb-4">
+                            <p class="text-sm text-amber-800 font-medium"><i class="far fa-clock mr-2"></i> Monthly, 6:30 PM</p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-700 font-bold"></span>
+                            <a href="#" class="text-amber-600 hover:text-amber-800 font-medium"></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="puja-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="p-6">
+                        <div class="text-amber-600 text-4xl mb-4">
+                            <i class="fas fa-ring"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-amber-800 mb-3">Wedding Ceremonies</h3>
+                        <p class="text-gray-700 mb-4">Sacred wedding ceremonies conducted in temple premises with traditional Vedic rituals.</p>
+                        <div class="bg-amber-100 p-3 rounded-lg mb-4">
+                            <p class="text-sm text-amber-800 font-medium"><i class="far fa-clock mr-2"></i> By appointment</p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-700 font-bold"></span>
+                            <a href="#" class="text-amber-600 hover:text-amber-800 font-medium"></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 5 -->
+                <div class="puja-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="p-6">
+                        <div class="text-amber-600 text-4xl mb-4">
+                            <i class="fas fa-baby"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-amber-800 mb-3">Naming Ceremony</h3>
+                        <p class="text-gray-700 mb-4">Traditional Hindu naming ceremony for newborns with blessings from Lord Ganesha.</p>
+                        <div class="bg-amber-100 p-3 rounded-lg mb-4">
+                            <p class="text-sm text-amber-800 font-medium"><i class="far fa-clock mr-2"></i> By appointment</p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-700 font-bold"></span>
+                            <a href="#" class="text-amber-600 hover:text-amber-800 font-medium"></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 6 -->
+                <div class="puja-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="p-6">
+                        <div class="text-amber-600 text-4xl mb-4">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-amber-800 mb-3">House Warming Puja</h3>
+                        <p class="text-gray-700 mb-4">Vastu puja and griha pravesh ceremonies for new homes and businesses.</p>
+                        <div class="bg-amber-100 p-3 rounded-lg mb-4">
+                            <p class="text-sm text-amber-800 font-medium"><i class="far fa-clock mr-2"></i> By appointment</p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-700 font-bold"></span>
+                            <a href="#" class="text-amber-600 hover:text-amber-800 font-medium">Book Now →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 bg-white p-8 rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold text-amber-800 mb-4 text-center">How to Avail Temple Services</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="flex items-start">
+                        <div class="bg-amber-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-phone-alt text-amber-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-amber-800 mb-2">Phone Booking</h4>
+                            <p class="text-gray-700">Call our temple office at +91 9448471968 during working hours (9 AM to 5 PM)</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-amber-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-user-check text-amber-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-amber-800 mb-2">In-Person</h4>
+                            <p class="text-gray-700">Visit temple office near main entrance during working hours</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-amber-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-envelope text-amber-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-amber-800 mb-2">Email</h4>
+                            <p class="text-gray-700">Send request to mnjagadeesh@gmail.com with details</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Shree Varada Vinayak  Mandir. All rights reserved.</p>
-  </footer>
+    <!-- Events Section -->
+    <section id="events" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-tangerine text-4xl md:text-6xl text-amber-700 mb-4">Temple Events</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto"></div>
+                <p class="text-xl text-gray-700 mt-4">Celebrate divine occasions with us throughout the year</p>
+            </div>
+            <div class="mb-12">
+                <h3 class="text-2xl md:text-3xl font-bold text-amber-800 mb-6 text-center">Annual Festival Calendar</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white border border-amber-200">
+                        <thead class="bg-amber-600 text-white">
+                            <tr>
+                                <th class="py-3 px-4 text-left">Month</th>
+                                <th class="py-3 px-4 text-left">Festival</th>
+                                <th class="py-3 px-4 text-left">Date</th>
+                                <th class="py-3 px-4 text-left">Highlights</th>
+                            </tr>
+                        </thead> 
+						<tbody class="divide-y divide-amber-200">
+                            <tr class="hover:bg-amber-50">
+                                <td class="py-3 px-4">June</td>
+                                <td class="py-3 px-4"></td>
+                                <td class="py-3 px-4"></td>
+                                <td class="py-3 px-4"></td>
+                            </tr>
+                        </tbody>  
+						
+						<!--
+                        <tbody class="divide-y divide-amber-200">
+                            <tr class="hover:bg-amber-50">
+                                <td class="py-3 px-4">January</td>
+                                <td class="py-3 px-4">Makar Sankranti</td>
+                                <td class="py-3 px-4">14-15 Jan</td>
+                                <td class="py-3 px-4">Special til-gul offering, kite flying</td>
+                            </tr>
+                            <tr class="hover:bg-amber-50">
+                                <td class="py-3 px-4">February</td>
+                                <td class="py-3 px-4">Magha Purnima</td>
+                                <td class="py-3 px-4">5 Feb</td>
+                                <td class="py-3 px-4">Sacred bath rituals, charity events</td>
+                            </tr>
+                            <tr class="hover:bg-amber-50">
+                                <td class="py-3 px-4">March</td>
+                                <td class="py-3 px-4">Mahashivratri</td>
+                                <td class="py-3 px-4">11 Mar</td>
+                                <td class="py-3 px-4">Night-long vigil, special abhishekam</td>
+                            </tr>
+                            <tr class="hover:bg-amber-50">
+                                <td class="py-3 px-4">April</td>
+                                <td class="py-3 px-4">Gudi Padwa</td>
+                                <td class="py-3 px-4">2 Apr</td>
+                                <td class="py-3 px-4">New Year celebrations, cultural programs</td>
+                            </tr>
+                            <tr class="hover:bg-amber-50">
+                                <td class="py-3 px-4">August</td>
+                                <td class="py-3 px-4">Krishna Janmashtami</td>
+                                <td class="py-3 px-4">30 Aug</td>
+                                <td class="py-3 px-4">Dahi handi, midnight celebrations</td>
+                            </tr>
+                            <tr class="hover:bg-amber-50">
+                                <td class="py-3 px-4">September</td>
+                                <td class="py-3 px-4">Ganesh Chaturthi</td>
+                                <td class="py-3 px-4">18-28 Sep</td>
+                                <td class="py-3 px-4">10-day festival with processions, cultural events</td>
+                            </tr>
+                            <tr class="hover:bg-amber-50">
+                                <td class="py-3 px-4">October</td>
+                                <td class="py-3 px-4">Navratri</td>
+                                <td class="py-3 px-4">15-24 Oct</td>
+                                <td class="py-3 px-4">Garba nights, Durga puja</td>
+                            </tr>
+                            <tr class="hover:bg-amber-50">
+                                <td class="py-3 px-4">November</td>
+                                <td class="py-3 px-4">Diwali</td>
+                                <td class="py-3 px-4">12 Nov</td>
+                                <td class="py-3 px-4">Lakshmi puja, lighting ceremony</td>
+                            </tr>
+                        </tbody> -->
+                    </table>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-2xl md:text-3xl font-bold text-amber-800 mb-6 text-center">Past Events Gallery</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div class="relative group overflow-hidden rounded-lg">
+                        <img src="https://i.pinimg.com/originals/2b/2a/6c/2b2a6c4e4c3f8c9a3c3e8e3b3e3e3e3.jpg" alt="Event 1" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <p class="text-white font-bold text-center px-2">Ganesh Chaturthi</p>
+                        </div>
+                    </div>
+                    <div class="relative group overflow-hidden rounded-lg">
+                        <img src="https://i.pinimg.com/originals/2b/2a/6c/2b2a6c4e4c3f8c9a3c3e8e3b3e3e3e3.jpg" alt="Event 2" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <p class="text-white font-bold text-center px-2">Annual Rathotsava</p>
+                        </div>
+                    </div>
+                    <div class="relative group overflow-hidden rounded-lg">
+                        <img src="https://i.pinimg.com/originals/2b/2a/6c/2b2a6c4e4c3f8c9a3c3e8e3b3e3e3e3.jpg" alt="Event 3" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <p class="text-white font-bold text-center px-2">Bhajan Sandhya</p>
+                        </div>
+                    </div>
+                    <div class="relative group overflow-hidden rounded-lg">
+                        <img src="https://i.pinimg.com/originals/2b/2a/6c/2b2a6c4e4c3f8c9a3c3e8e3b3e3e3e3.jpg" alt="Event 4" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <p class="text-white font-bold text-center px-2">Charity Food Drive</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Live Darshan Section -->
+    <section id="live-darshan" class="py-16 bg-amber-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-tangerine text-4xl md:text-6xl text-amber-700 mb-4">Live Darshan</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto"></div>
+                <p class="text-xl text-gray-700 mt-4">Experience divine blessings from anywhere in the world [WIP]</p>
+            </div>
+            <div class="mb-12">
+                <div class="live-darshan-container rounded-lg overflow-hidden shadow-xl border-4 border-amber-300">
+                    <iframe src="https://www.youtube.com/embed/live_stream?channel=UCYVp6H7AClpLwQJw9wK5jJw" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-amber-800 mb-4">Prayer Timings</h3>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between border-b border-amber-100 pb-2">
+                            <span class="text-gray-700">Morning Aarti</span>
+                            <span class="font-medium text-amber-700">6:00 AM</span>
+                        </li>
+                        <li class="flex justify-between border-b border-amber-100 pb-2">
+                            <span class="text-gray-700">Abhishek</span>
+                            <span class="font-medium text-amber-700">6:30 AM</span>
+                        </li>
+                        <li class="flex justify-between border-b border-amber-100 pb-2">
+                            <span class="text-gray-700">Midday Puja</span>
+                            <span class="font-medium text-amber-700">12:00 PM</span>
+                        </li>
+                        <li class="flex justify-between border-b border-amber-100 pb-2">
+                            <span class="text-gray-700">Evening Aarti</span>
+                            <span class="font-medium text-amber-700">6:30 PM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-gray-700">Shayan Aarti</span>
+                            <span class="font-medium text-amber-700">8:45 PM</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-amber-800 mb-4">Today's Special</h3>
+                    <div class="flex items-start mb-4">
+                        <div class="bg-amber-100 p-2 rounded-full mr-4">
+                            <i class="fas fa-calendar-day text-amber-600"></i>
+                        </div>
+                        <div> <!--
+                            <h4 class="font-bold text-amber-700">August 15, 2023</h4>
+                            <p class="text-gray-700">Independence Day & Varalakshmi Vratam</p>-->
+                        </div>
+                    </div>
+                    <div class="bg-amber-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-amber-800 mb-2">Special Events Today:</h4>
+                        <!-- <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Flag hoisting ceremony at 8:00 AM</li>
+                            <li>Special Varalakshmi Puja at 10:30 AM</li>
+                            <li>Cultural program by devotees at 6:00 PM</li>
+                            <li>Distribution of prasadam after evening aarti</li>
+                        </ul> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-tangerine text-4xl md:text-6xl text-amber-700 mb-4">Contact Us</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto"></div>
+                <p class="text-xl text-gray-700 mt-4">We'd love to hear from you</p>
+            </div>
+            <div class="flex flex-col md:flex-row gap-8 mb-12">
+                <div class="md:w-1/2">
+                    <div class="bg-amber-50 p-8 rounded-lg shadow-md h-full">
+                        <h3 class="text-2xl font-bold text-amber-800 mb-6">Get in Touch</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-amber-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-amber-800 mb-1">Address</h4>
+                                    <p class="text-gray-700">Varada Vinayak Ganesh Mandir, RTO Circle, Belgaum, Karnataka - 590001</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone-alt text-amber-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-amber-800 mb-1">Phone</h4>
+                                    <p class="text-gray-700">+91 9448471968 (Office)</p>
+                                    <p class="text-gray-700">+91 9448471968 (Priest)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-amber-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-amber-800 mb-1">Email</h4>
+                                    <p class="text-gray-700">mnjagadeesh@gmail.com</p>
+                                    <!-- <p class="text-gray-700">donations.varadavinayak@gmail.com</p> -->
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-clock text-amber-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-amber-800 mb-1">Office Hours</h4>
+                                    <p class="text-gray-700">Monday to Saturday: 9:00 AM to 5:00 PM</p>
+                                    <p class="text-gray-700">Sunday: 9:00 AM to 1:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="font-bold text-lg text-amber-800 mb-3">Connect With Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-amber-100 hover:bg-amber-200 text-amber-800 p-3 rounded-full">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-amber-100 hover:bg-amber-200 text-amber-800 p-3 rounded-full">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="bg-amber-100 hover:bg-amber-200 text-amber-800 p-3 rounded-full">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="#" class="bg-amber-100 hover:bg-amber-200 text-amber-800 p-3 rounded-full">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-md border border-amber-200 h-full">
+                        <h3 class="text-2xl font-bold text-amber-800 mb-6">Send Us a Message</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                                <select id="subject" class="w-full px-4 py-2 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                                    <option value="">Select a subject</option>
+                                    <option value="puja">Puja Booking</option>
+                                    <option value="donation">Donation Inquiry</option>
+                                    <option value="event">Event Information</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+                            </div>
+                            <button type="submit" class="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-bold w-full">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold text-amber-800 mb-6 text-center">Find Us on Map</h3>
+                    <iframe src="https://maps.app.goo.gl/hUuAjy6ea5KPLE2j9"      
+					<div class="h-96 w-full rounded-lg overflow-hidden">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section class="py-16 bg-gradient-to-r from-amber-700 to-amber-900">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="font-tangerine text-4xl md:text-6xl text-white mb-4">Support Our Temple</h2>
+            <div class="w-24 h-1 bg-white mx-auto mb-8"></div>
+            <p class="text-xl text-amber-100 mb-8 max-w-3xl mx-auto">Your generous donations help us maintain the temple, conduct daily rituals, organize festivals, and serve the community through various charitable activities.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-lg border border-amber-300 border-opacity-30">
+                    <div class="text-amber-300 text-4xl mb-4">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">One-Time Donation</h3>
+                    <p class="text-amber-100 mb-6">Make a single donation of any amount to support temple activities</p>
+                    <a href="#" class="bg-white hover:bg-gray-100 text-amber-800 px-6 py-2 rounded-full font-bold inline-block">Donate Now</a>
+                </div>
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-lg border border-amber-300 border-opacity-30">
+                    <div class="text-amber-300 text-4xl mb-4">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Monthly Contribution</h3>
+                    <p class="text-amber-100 mb-6">Set up automatic monthly donations to provide sustained support</p>
+                    <a href="#" class="bg-white hover:bg-gray-100 text-amber-800 px-6 py-2 rounded-full font-bold inline-block">Subscribe</a>
+                </div>
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-lg border border-amber-300 border-opacity-30">
+                    <div class="text-amber-300 text-4xl mb-4">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Sponsor an Event</h3>
+                    <p class="text-amber-100 mb-6">Fully or partially sponsor a festival or special puja</p>
+                    <a href="#" class="bg-white hover:bg-gray-100 text-amber-800 px-6 py-2 rounded-full font-bold inline-block">Learn More</a>
+                </div>
+            </div>
+            <div class="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-lg max-w-4xl mx-auto">
+                <h3 class="text-xl font-bold text-white mb-4">Donation Methods</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-white p-4 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-qrcode text-3xl text-amber-700"></i>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg flex items-center justify-center">
+                        <i class="fab fa-google-pay text-3xl text-amber-700"></i>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg flex items-center justify-center">
+                        <i class="fab fa-paypal text-3xl text-amber-700"></i>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-university text-3xl text-amber-700"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-amber-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Varada Vinayak</h3>
+                    <p class="mb-4 text-amber-200">A sacred abode of Lord Ganesha in the heart of Belgaum, spreading divine blessings and spiritual wisdom.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-amber-200 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-amber-200 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-amber-200 hover:text-white"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="text-amber-200 hover:text-white"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-amber-200 hover:text-white">Home</a></li>
+                        <li><a href="#about" class="text-amber-200 hover:text-white">About Temple</a></li>
+                        <li><a href="#services" class="text-amber-200 hover:text-white">Services</a></li>
+                        <li><a href="#events" class="text-amber-200 hover:text-white">Events</a></li>
+                        <li><a href="#live-darshan" class="text-amber-200 hover:text-white">Live Darshan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Temple Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-amber-200 hover:text-white">Puja Booking</a></li>
+                        <!-- <li><a href="#" class="text-amber-200 hover:text-white">Wedding Ceremonies</a></li> -->
+                        <li><a href="#" class="text-amber-200 hover:text-white">Religious Classes</a></li>
+                        <li><a href="#" class="text-amber-200 hover:text-white">Charity Programs</a></li>
+                        <li><a href="#" class="text-amber-200 hover:text-white">Volunteer</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+                    <address class="not-italic text-amber-200">
+                        <p class="mb-2"><i class="fas fa-map-marker-alt mr-2"></i> RTO Circle, Belgaum, Karnataka - 590001</p>
+                        <p class="mb-2"><i class="fas fa-phone-alt mr-2"></i> +91 9448471968</p>
+                        <p class="mb-2"><i class="fas fa-envelope mr-2"></i> mnjagadeesh@gmail.com</p>
+                        <p><i class="fas fa-clock mr-2"></i> Open daily 6:00 AM to 9:00 PM</p>
+                    </address>
+                </div>
+            </div>
+            <div class="border-t border-amber-800 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-amber-200 mb-4 md:mb-0">&copy; 2023 Varada Vinayak Ganesh Mandir. All Rights Reserved.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-amber-200 hover:text-white">Privacy Policy</a>
+                        <a href="#" class="text-amber-200 hover:text-white">Terms of Service</a>
+                        <a href="#" class="text-amber-200 hover:text-white">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-amber-600 hover:bg-amber-700 text-white p-3 rounded-full shadow-lg hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
